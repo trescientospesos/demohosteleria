@@ -1,0 +1,31 @@
+Tienda_Nombre,Tienda_Descripcion,Tienda_Telefono,Tienda_Prefijo,Tienda_Moneda,Tienda_Color_1,Tienda_Color_2,Tienda_Color_Acento,Prod_Categoria,Prod_Nombre,Prod_Descripcion,Prod_Precio,Prod_Variantes,Prod_Imagen,Prod_Extras,Prod_Sin
+TacoFiesta Mexicana,Auténtico sabor mexicano,15500000000,52,MXN,#ea580c,#1e293b,#ea580c,Tacos,Tacos al Pastor,Orden de 5 tacos con piña y cilantro,85.00,,taco1.jpg,"Queso:15, Aguacate:20","Cebolla, Cilantro, Piña"
+,,,,,,,,Tacos,Tacos de Bistec,Tortilla hecha a mano,95.00,,taco2.jpg,"Queso:15, Nopales:10","Cebolla, Salsa"
+,,,,,,,,Tacos,Gringa de Pastor,En tortilla de harina gigante con queso,70.00,,taco3.jpg,Extra Carne:25,"Piña, Salsa"
+,,,,,,,,Tacos,Volcán de Chorizo,Tostada crujiente con queso fundido,50.00,,taco4.jpg,,Salsa
+,,,,,,,,Tacos,Tacos Campechanos,Mezcla de bistec y longaniza,100.00,,taco5.jpg,Queso:15,Cebolla
+,,,,,,,,Tacos,Guacamole con Totopos,Orden para compartir,65.00,,taco6.jpg,,Totopos
+,,,,,,,,Hamburguesas,Burger Clásica,"Carne 100% res, lechuga y tomate",125.00,"Sencilla:125, Doble:165",burger1.jpg,"Tocino:25, Huevo:15","Cebolla, Tomate, Pepinillos"
+,,,,,,,,Hamburguesas,Burger BBQ,"Aros de cebolla, tocino y salsa BBQ",150.00,"Sencilla:150, Doble:190",burger2.jpg,Queso Extra:20,Cebolla
+,,,,,,,,Hamburguesas,Burger Hawaiana,"Con piña asada, jamón y queso",140.00,,burger3.jpg,Tocino:25,"Piña, Jamón"
+,,,,,,,,Hamburguesas,Chicken Crispy,Pechuga de pollo empanizada crujiente,120.00,,burger4.jpg,Queso:15,Mayonesa
+,,,,,,,,Hamburguesas,Burger Vegana,Medallón de lentejas y champiñones,135.00,,burger5.jpg,Aguacate:25,Aderezo
+,,,,,,,,Hamburguesas,Monster Burger,"Triple carne, mucho queso y tocino",220.00,,burger6.jpg,Huevo:15,Todo
+,,,,,,,,Pizzas,Pizza Pepperoni,La clásica favorita con doble queso,185.00,"Mediana:185, Grande:245, Familiar:295",pizza1.jpg,"Orilla Queso:45, Pepperoni Extra:35",Salsa Tomate
+,,,,,,,,Pizzas,Pizza Hawaiana,"Jamón, piña y extra queso",195.00,"Mediana:195, Grande:255",pizza2.jpg,Orilla Queso:45,Piña
+,,,,,,,,Pizzas,Pizza Mexicana,"Chorizo, jalapeño, cebolla y frijoles",210.00,"Mediana:210, Grande:270",pizza3.jpg,Extra Jalapeño:15,"Jalapeño, Cebolla"
+,,,,,,,,Pizzas,Pizza 4 Quesos,"Mozzarella, parmesano, crema y azul",220.00,"Mediana:220, Grande:290",pizza4.jpg,,
+,,,,,,,,Pizzas,Pizza Carnes Frías,"Tocino, pepperoni, salchicha y jamón",230.00,"Mediana:230, Grande:300",pizza5.jpg,,
+,,,,,,,,Pizzas,Pizza Vegetariana,"Champiñones, pimientos y aceitunas",200.00,"Mediana:200, Grande:260",pizza6.jpg,,Aceitunas
+,,,,,,,,Bebidas,Coca Cola,Lata fría 355ml,30.00,,drink1.jpg,,Hielo
+,,,,,,,,Bebidas,Agua de Jamaica,Natural hecha en casa,35.00,"Litro:35, Medio Litro:20",drink2.jpg,,Azúcar
+,,,,,,,,Bebidas,Agua de Horchata,Estilo tradicional con canela,35.00,"Litro:35, Medio Litro:20",drink3.jpg,,Canela
+,,,,,,,,Bebidas,Cerveza Nacional,Botella media bien fría,45.00,,drink4.jpg,,
+,,,,,,,,Bebidas,Jugo de Naranja,Recién exprimido al momento,45.00,,drink5.jpg,,Hielo
+,,,,,,,,Bebidas,Café Americano,Grano recién molido de altura,35.00,,drink6.jpg,Leche:5,Azúcar
+,,,,,,,,Postres,Flan Napolitano,Rebanada casera con caramelo,50.00,,dessert1.jpg,,Caramelo
+,,,,,,,,Postres,Pastel de Chocolate,Tres leches con turín,60.00,,dessert2.jpg,Bola Helado:25,
+,,,,,,,,Postres,Churros,Orden de 3 con azúcar y canela,45.00,,dessert3.jpg,"Cajeta:15, Chocolate:15",Azúcar
+,,,,,,,,Postres,Helado Vainilla,Dos bolas gourmet,40.00,,dessert4.jpg,Chocolate Líquido:10,
+,,,,,,,,Postres,Arroz con Leche,Con pasas y canela espolvoreada,35.00,,dessert5.jpg,,Pasas
+,,,,,,,,Postres,Pay de Limón,Base de galleta maría,50.00,,dessert6.jpg,,Merengue
