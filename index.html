@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cargando Tienda...</title>
-    <!-- Librerías Externas -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap">
@@ -26,20 +25,17 @@
 </head>
 <body>
 
-    <!-- PANTALLA DE CARGA -->
     <div id="loader-view" class="fixed inset-0 bg-white z-[100] flex flex-col items-center justify-center">
         <div class="loader"></div>
         <p class="mt-4 text-slate-500 font-bold animate-pulse">Cargando catálogo...</p>
     </div>
 
     <div id="app" class="min-h-screen pb-20 hidden">
-        <!-- HEADER -->
         <header class="bg-white/90 backdrop-blur-md sticky top-0 z-40 border-b border-slate-200 shadow-sm">
             <div class="max-w-5xl mx-auto px-4 py-3 flex justify-between items-center">
                 <div class="flex items-center gap-3">
                     <h1 id="brand-name" class="font-bold text-xl sm:text-2xl text-slate-900">Tienda</h1>
                 </div>
-                <!-- Botón Carrito -->
                 <button onclick="toggleView('cart')" class="relative p-2 bg-slate-900 text-white rounded-xl shadow-md active:scale-95 transition-transform">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
                     <span id="cart-counter" class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full font-bold border-2 border-white">0</span>
@@ -47,19 +43,14 @@
             </div>
         </header>
 
-        <!-- VISTA MENÚ -->
         <main id="view-menu" class="max-w-5xl mx-auto p-4 animate-in fade-in duration-500">
-            <!-- Descripción Tienda -->
             <p id="store-desc" class="text-sm text-slate-500 mb-4 px-1 italic"></p>
             
-            <!-- Barra Categorías -->
             <div id="category-bar" class="flex gap-2 overflow-x-auto no-scrollbar pb-6 sticky top-[65px] bg-transparent z-30"></div>
             
-            <!-- Grid Productos -->
             <div id="product-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
         </main>
 
-        <!-- VISTA CARRITO -->
         <section id="view-cart" class="hidden max-w-2xl mx-auto p-4 animate-in slide-in-from-right duration-300">
             <div class="flex items-center gap-4 mb-6">
                 <button onclick="toggleView('menu')" class="p-2 bg-white border border-slate-200 rounded-xl text-slate-500 hover:text-primary transition-colors">
@@ -70,7 +61,6 @@
             
             <div id="cart-list" class="space-y-3 mb-6"></div>
 
-            <!-- Formulario Pedido -->
             <div class="bg-white p-6 rounded-3xl shadow-lg border border-slate-100 space-y-4">
                 <h3 class="font-bold text-sm uppercase text-slate-400 tracking-widest border-b pb-2">Datos de Entrega</h3>
                 
@@ -100,7 +90,6 @@
             </div>
         </section>
 
-        <!-- MODAL PRODUCTO -->
         <div id="product-modal" class="fixed inset-0 bg-slate-900/60 z-50 hidden modal-blur p-4 items-center justify-center">
             <div class="bg-white w-full max-w-lg rounded-[32px] overflow-hidden shadow-2xl animate-in slide-in-from-bottom duration-300 flex flex-col max-h-[90vh]">
                 <div class="relative h-56 flex-shrink-0">
@@ -111,19 +100,16 @@
                     <h3 id="modal-title" class="text-2xl font-bold text-slate-900 mb-2"></h3>
                     <p id="modal-desc" class="text-slate-500 text-sm mb-4"></p>
                     
-                    <!-- VARIANTES (Tallas) -->
                     <div id="modal-variants-container" class="mb-4 hidden">
                         <label class="block text-xs font-bold uppercase text-slate-400 mb-2 tracking-widest">Elige una opción</label>
                         <div id="modal-variants-list" class="grid grid-cols-2 gap-2"></div>
                     </div>
 
-                    <!-- EXTRAS -->
                     <div id="modal-extras-container" class="mb-4 hidden">
                         <label class="block text-xs font-bold uppercase text-slate-400 mb-2 tracking-widest">Extras</label>
                         <div id="modal-extras-list" class="space-y-2"></div>
                     </div>
 
-                     <!-- REMOVALS (Sin) -->
                      <div id="modal-removals-container" class="mb-4 hidden">
                         <label class="block text-xs font-bold uppercase text-slate-400 mb-2 tracking-widest">Quitar ingredientes (Gratis)</label>
                         <div id="modal-removals-list" class="space-y-2"></div>
@@ -146,20 +132,12 @@
 
     <script>
         // ==========================================
-        //  ⬇️⬇️ PEGA AQUÍ EL ENLACE DE TU EXCEL ⬇️⬇️
+        //  CONFIGURACIÓN DE ARCHIVO LOCAL
         // ==========================================
         
         const CSV_LOCAL_FILE = "./datos_tienda.csv"; 
 
         // ==========================================
-
-        function getSheetID(url) {
-            if (!url || url === 'PON_AQUI_TU_ENLACE_DE_GOOGLE_SHEETS') return null;
-            const match = url.match(/\/d\/([a-zA-Z0-9-_]+)/);
-            return match ? match[1] : url; 
-        }
-
-        const SHEET_ID = getSheetID(GOOGLE_SHEET_LINK);
 
         let state = {
             config: { name: "Mi Tienda", desc: "", phone: "", prefix: "52", currency: "MXN", color: "#f97316" },
@@ -179,20 +157,18 @@
         };
 
         window.onload = async () => {
-            if(!SHEET_ID) {
-                alert("⚠️ ATENCIÓN: Pega el enlace de tu Google Sheet en el archivo index.html.");
-                document.getElementById('loader-view').innerHTML = '<div class="p-10 text-center"><h2 class="text-xl font-bold text-red-500">Falta Enlace</h2><p class="text-slate-500 mt-2">Edita el HTML y pega el enlace del Excel.</p></div>';
-                return;
-            }
             await fetchData();
         };
 
         async function fetchData() {
-            // Se asume la primera hoja (gid=0 o por defecto) en formato CSV
-            const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv`;
-            
+            // Carga directa del archivo local CSV
             try {
-                const response = await fetch(url);
+                const response = await fetch(CSV_LOCAL_FILE);
+                
+                if (!response.ok) {
+                    throw new Error("No se pudo encontrar el archivo " + CSV_LOCAL_FILE);
+                }
+
                 const csvText = await response.text();
                 processData(csvText);
                 
@@ -203,7 +179,8 @@
 
             } catch (error) {
                 console.error(error);
-                alert("Error cargando datos. Verifica que el Excel esté 'Publicado en la web' como CSV.");
+                alert("Error cargando datos. Asegúrate de que 'datos_tienda.csv' esté en la misma carpeta y estés usando un servidor local.");
+                document.getElementById('loader-view').innerHTML = '<div class="p-10 text-center"><h2 class="text-xl font-bold text-red-500">Error de Archivo</h2><p class="text-slate-500 mt-2">No se encontró datos_tienda.csv</p></div>';
             }
         }
 
